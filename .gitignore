@@ -1,0 +1,33 @@
+# Byte-compiled / optimized Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# SQLAlchemy migration directory
+/migrations
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Python virtual environment
+venv/
+
+# IDE files (e.g. for Visual Studio Code)
+.vscode/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Configuration files
+config.py  # assuming it contains sensitive info and shouldn't be versioned
+
+# Other sensitive or generated files
+*.sqlite  # assuming SQLite database file
+*.pyc
