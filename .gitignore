@@ -31,3 +31,6 @@ config.py  # assuming it contains sensitive info and shouldn't be versioned
 # Other sensitive or generated files
 *.sqlite  # assuming SQLite database file
 *.pyc
+
+# ignore git files
+.gitignore

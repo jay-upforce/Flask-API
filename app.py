@@ -19,12 +19,15 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     
-    # Register blueprints for User and Competition apps
+    # Register blueprints routes
     from User_app.views import user_bp
-    app.register_blueprint(user_bp, url_prefix='/') # resgiter user blueprint route
+    app.register_blueprint(user_bp, url_prefix='/')     # resgiter User_app blueprint route
     
     from Competition_app.views import competition_bp
-    app.register_blueprint(competition_bp, url_prefix='/competition')    # register competition blueprint route
+    app.register_blueprint(competition_bp, url_prefix='/competition')    # register Competition_app blueprint route
+
+    from Entry_app.views import entry_bp
+    app.register_blueprint(entry_bp, url_prefix='/entry')       # register Entry_app blueprint route
 
     return app
 

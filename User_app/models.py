@@ -1,4 +1,4 @@
-from User_app import db
+from app import db
 
 class BaseModel(db.Model):
     __abstract__ = True
@@ -18,9 +18,10 @@ class User(BaseModel):
     email = db.Column(db.String(255), unique=True)
     gender = db.Column(db.String(10))
     phone_number = db.Column(db.String(20))
-
+    
+    # reference of competion table(competition table use this table's PK as FK)
     competitions = db.relationship('Competition', backref='user', cascade='all, delete-orphan')
 
     def __repr__(self):
-        return f"<User {self.name}>"
+        return f'<User {self.name} ({self.email})>'
     

@@ -1,4 +1,4 @@
 from flask import Blueprint
-user_bp = Blueprint('user_bp', __name__, url_prefix='/')
+entry_bp = Blueprint('entry', __name__, url_prefix='/entry')
 
 from Entry_app import views, models
