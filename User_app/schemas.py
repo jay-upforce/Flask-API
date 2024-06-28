@@ -22,3 +22,14 @@ class UserSerializer(Schema):
         # Check if email is a valid format
         if '@' not in value or '.' not in value:
             raise ValidationError('Invalid email address')
+        
+    @validates('phone_number')
+    def validate_phone_number(self, value):
+        # Check if phone number is a valid format
+        if not value.isdigit():
+            raise ValidationError('Phone number must contain only digits')
+
+        # Example additional validation: Check if phone number starts with a valid country code
+        # Replace with your specific validation logic as needed
+        if not value.startswith(('1', '2', '3', '4', '5', '6', '7', '8', '9')):
+            raise ValidationError('Phone number must start with a valid digit')
